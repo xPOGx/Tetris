@@ -4,7 +4,7 @@ import java.awt.event.KeyEvent;
  * Class Tetris - main functionality of Game.
  */
 public class Tetris {
-    private Field field;                        //Field with cells
+    private final Field field;                  //Field with cells
     private Figure figure;                      //Figure
     private KeyboardObserver keyboardObserver; //Read keyboard
     private boolean isGameOver;                 //Game Over?
@@ -95,20 +95,6 @@ public class Tetris {
             figure = FigureFactory.createRandomFigure(field.getWidth() / 2, 0); //create new figure
             keyboardObserver.cleatKeyEvents();
         }
-    }
-
-    /**
-     * Setter for figure
-     */
-    public void setFigure(Figure figure) {
-        this.figure = figure;
-    }
-
-    /**
-     * Setter for field
-     */
-    public void setField(Field field) {
-        this.field = field;
     }
 
     public static Tetris game;

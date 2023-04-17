@@ -99,7 +99,7 @@ public class Figure {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 if (matrix[i][j] == 1)
-                    field.setValue(x + j, y + i, 1);
+                    field.setValue(x + j, y + i);
             }
         }
     }

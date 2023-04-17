@@ -1,9 +1,9 @@
 import java.util.stream.IntStream;
 
 public class Field {
-    private int width;
-    private int height;
-    private int[][] matrix;
+    private final int width;
+    private final int height;
+    private final int[][] matrix;
 
     public int getWidth() {
         return width;
@@ -11,10 +11,6 @@ public class Field {
 
     public int getHeight() {
         return height;
-    }
-
-    public int[][] getMatrix() {
-        return matrix;
     }
 
     public Field(int width, int height) {
@@ -82,8 +78,8 @@ public class Field {
         return null;
     }
 
-    void setValue(int x, int y, int value) {
+    void setValue(int x, int y) {
         if (x >= 0 && x < width && y >= 0 && y < height)
-            matrix[y][x] = value;
+            matrix[y][x] = 1;
     }
 }
