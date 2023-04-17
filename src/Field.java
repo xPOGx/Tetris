@@ -46,7 +46,7 @@ public class Field {
                 int index = canvas[i][j];
                 if (index == 0)
                     System.out.print(" . ");
-                else if (index > 1)
+                else if (index >= 1)
                     System.out.print(" X ");
                 else
                     System.out.print("???");
@@ -70,7 +70,13 @@ public class Field {
                 matrix[0] = new int[width];
             } else i--;
         }
-        score += 10 * count;
+        switch (count) {
+            case 1 -> score += 10;
+            case 2 -> score += 25;
+            case 3 -> score += 75;
+            case 4 -> score += 300;
+            default -> {}
+        }
     }
 
     public int getScore() {
