@@ -56,6 +56,8 @@ public class Tetris {
 
         //Prints "Game Over"
         System.out.println("Game Over");
+        System.out.printf("Your score: %d%n", field.getScore());
+
     }
 
     private void makeAction(KeyboardObserver keyboardObserver) {

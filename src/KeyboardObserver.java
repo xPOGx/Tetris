@@ -35,11 +35,13 @@ public class KeyboardObserver extends Thread {
             }
         });
 
-
         frame.addKeyListener(new KeyListener() {
 
             public void keyTyped(KeyEvent e) {
                 //pass
+                if (e.getKeyChar() == 'q') {
+                    frame.dispose();
+                }
             }
 
             public void keyReleased(KeyEvent e) {
