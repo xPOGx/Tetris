@@ -39,7 +39,7 @@ public class Tetris {
         //Game not over :)
         isGameOver = false;
         // Create first figure in top middle width: x - half of width, y - 0
-        figure = FigureFactory.createRandomFigure(field.getWidth() / 2, 0);
+        figure = FigureFactory.createRandomFigure(field.getWidth() / 2 - 2, 0);
 
         //while not Game Over
         while (!isGameOver) {
@@ -56,6 +56,8 @@ public class Tetris {
 
         //Prints "Game Over"
         System.out.println("Game Over");
+        System.out.printf("Your score: %d%n", field.getScore());
+
     }
 
     private void makeAction(KeyboardObserver keyboardObserver) {
@@ -93,7 +95,7 @@ public class Tetris {
             figure.landed(); //land
             isGameOver = figure.getY() <= 1; //if landed on TOP - GAME OVER
             field.removeFullLines(); //clean full lines
-            figure = FigureFactory.createRandomFigure(field.getWidth() / 2, 0); //create new figure
+            figure = FigureFactory.createRandomFigure(field.getWidth() / 2 - 2, 0); //create new figure
             keyboardObserver.cleatKeyEvents();
         }
     }

@@ -4,6 +4,7 @@ public class Field {
     private final int width;
     private final int height;
     private final int[][] matrix;
+    private int score;
 
     public int getWidth() {
         return width;
@@ -45,9 +46,7 @@ public class Field {
                 int index = canvas[i][j];
                 if (index == 0)
                     System.out.print(" . ");
-                else if (index == 1)
-                    System.out.print(" X ");
-                else if (index == 2)
+                else if (index >= 1)
                     System.out.print(" X ");
                 else
                     System.out.print("???");
@@ -61,14 +60,27 @@ public class Field {
     }
 
     void removeFullLines() {
+        int count = 0;
         for (int i = height - 1; i >= 0; ) {
             if (IntStream.of(matrix[i]).sum() == width) {
                 for (int j = i; j > 0; j--) {
                     matrix[j] = matrix[j-1];
                 }
+                count++;
                 matrix[0] = new int[width];
             } else i--;
         }
+        switch (count) {
+            case 1 -> score += 10;
+            case 2 -> score += 25;
+            case 3 -> score += 75;
+            case 4 -> score += 300;
+            default -> {}
+        }
+    }
+
+    public int getScore() {
+        return score;
     }
 
     Integer getValue(int x, int y) {
