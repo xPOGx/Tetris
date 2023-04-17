@@ -50,6 +50,7 @@ public class Tetris {
 
             step();             //one more step
             field.print();      //print field status
+            //noinspection BusyWait
             Thread.sleep(1000);
         }
 
