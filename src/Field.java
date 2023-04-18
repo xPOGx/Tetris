@@ -5,6 +5,7 @@ public class Field {
     private final int height;
     private final int[][] matrix;
     private int score;
+    private int lines;
 
     public int getWidth() {
         return width;
@@ -14,22 +15,26 @@ public class Field {
         return height;
     }
 
+    public int[][] getMatrix() {
+        return matrix;
+    }
+
     public Field(int width, int height) {
         this.height = height;
         this.width = width;
         matrix = new int[height][width];
     }
 
-    void print() {
+    public  int[][] print() {
         int[][] canvas = new int[height][width];
 
         for (int i = 0; i < height; i++) {
             System.arraycopy(matrix[i], 0, canvas[i], 0, width);
         }
 
-        int left = Tetris.game.getFigure().getX();
-        int top = Tetris.game.getFigure().getY();
-        int[][] brickMatrix = Tetris.game.getFigure().getMatrix();
+        int left = Controller.getGame().getFigure().getX();
+        int top = Controller.getGame().getFigure().getY();
+        int[][] brickMatrix = Controller.getGame().getFigure().getMatrix();
 
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
@@ -39,24 +44,7 @@ public class Field {
             }
         }
 
-        System.out.println("---------------------------------------------------------------------------\n");
-
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                int index = canvas[i][j];
-                if (index == 0)
-                    System.out.print(" . ");
-                else if (index >= 1)
-                    System.out.print(" X ");
-                else
-                    System.out.print("???");
-            }
-            System.out.println();
-        }
-
-
-        System.out.println();
-        System.out.println();
+        return canvas;
     }
 
     void removeFullLines() {
@@ -70,17 +58,23 @@ public class Field {
                 matrix[0] = new int[width];
             } else i--;
         }
-        switch (count) {
-            case 1 -> score += 10;
-            case 2 -> score += 25;
-            case 3 -> score += 75;
-            case 4 -> score += 300;
-            default -> {}
+        if (count != 0) {
+            switch (count) {
+                case 1 -> score += 10;
+                case 2 -> score += 25;
+                case 3 -> score += 75;
+                case 4 -> score += 300;
+            }
+            lines += count;
         }
     }
 
     public int getScore() {
         return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 
     Integer getValue(int x, int y) {
@@ -93,5 +87,9 @@ public class Field {
     void setValue(int x, int y) {
         if (x >= 0 && x < width && y >= 0 && y < height)
             matrix[y][x] = 1;
+    }
+
+    public int getLines() {
+        return lines;
     }
 }
