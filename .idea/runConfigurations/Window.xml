@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Window" type="Application" factoryName="Application" activateToolWindowBeforeRun="false" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="Window" />
+    <module name="Tetris" />
+    <option name="VM_PARAMETERS" value="--module-path &quot;c:\users\pog2\downloads\javafx-sdk-17.0.6\lib&quot; --add-modules javafx.controls,javafx.fxml " />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

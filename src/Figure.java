@@ -73,7 +73,7 @@ public class Figure {
     }
 
     boolean isCurrentPositionAvailable() {
-        Field field = Tetris.game.getField();
+        Field field = Controller.getGame().getField();
 
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
@@ -94,7 +94,7 @@ public class Figure {
     }
 
     void landed() {
-        Field field = Tetris.game.getField();
+        Field field = Controller.getGame().getField();
 
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {

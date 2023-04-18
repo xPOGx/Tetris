@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="445.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <VBox alignment="TOP_CENTER" layoutX="216.0" layoutY="13.0" prefHeight="50.0" prefWidth="100.0"
+         style="-fx-border-width: 1; -fx-border-color: GREY;">
+      <Label fx:id="scoreLabelFx" maxHeight="20.0" maxWidth="80.0" minHeight="20.0" minWidth="40.0" prefHeight="20.0"
+             prefWidth="80.0" text="score"/>
+      <Label fx:id="linesLabelFx" layoutX="20.0" layoutY="11.0" maxHeight="20.0" maxWidth="80.0" minHeight="20.0"
+             minWidth="40.0" prefHeight="20.0" prefWidth="80.0" text="lines"/>
+      <Button fx:id="fxButtonRestart" onAction="#restart" text="Restart" visible="false">
+         <VBox.margin>
+            <Insets bottom="5.0" top="5.0"/>
+         </VBox.margin>
+      </Button>
+   </VBox>
+   <VBox alignment="CENTER_RIGHT" layoutX="4.0" layoutY="13.0" prefHeight="420.0" prefWidth="210.0"
+         style="-fx-border-color: GREY;">
+      <GridPane fx:id="fxGrid" alignment="CENTER" maxHeight="400.0" maxWidth="200.0" minHeight="200.0" minWidth="100.0"
+                prefHeight="400.0" prefWidth="200.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="10.0" prefWidth="20.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="10.0" prefWidth="20.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="10.0" prefWidth="20.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="10.0" prefWidth="20.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="10.0" prefWidth="20.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="10.0" prefWidth="20.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="10.0" prefWidth="20.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="10.0" prefWidth="20.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="10.0" prefWidth="20.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="10.0" prefWidth="20.0"/>
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+         </rowConstraints>
+      </GridPane>
+   </VBox>
+   <VBox fx:id="fxVBoxGO" alignment="CENTER" layoutX="10.0" layoutY="198.0" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: BLACk; -fx-background-radius: 30;" visible="false">
+         <Label alignment="CENTER" contentDisplay="CENTER" text="GAME OVER" textAlignment="CENTER" textFill="#d30a0a">
+            <font>
+               <Font size="33.0" />
+            </font>
+         </Label>
+      </VBox>
+</Pane>
