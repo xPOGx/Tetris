@@ -36,7 +36,7 @@ public class Tetris {
         if (!figure.isCurrentPositionAvailable()) {
             figure.up(); //move up
             figure.landed(); //land
-            isGameOver = figure.getY() <= 1; //if landed on TOP - GAME OVER
+            isGameOver = figure.getY() <= 0; //if landed on TOP - GAME OVER
             field.removeFullLines(); //clean full lines
             if (!isGameOver) {
                 figure = FigureFactory.createRandomFigure(field.getWidth() / 2 - 2, 0); //create new figure
